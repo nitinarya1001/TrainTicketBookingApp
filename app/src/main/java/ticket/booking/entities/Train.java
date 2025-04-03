@@ -2,13 +2,56 @@ package ticket.booking.entities;
 
 import java.util.List;
 import java.util.Map;
-import java.sql.Time;
-
 
 public class Train {
     private String trainId;
     private String trainNo;
     private List<List<Integer>> seats;
-    private Map<String, Time> route;
+    private Map<String, String> route;
     private List<String> stations;
+
+    public List<String> getStations() {
+        return stations;
+    }
+
+    public List<List<Integer>> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(List<List<Integer>> seats) {
+        this.seats = seats;
+    }
+
+    public String getTrainId() {
+        return trainId;
+    }
+
+    public Map<String, String> getroute() {
+        return route;
+    }
+
+    public String getTrainNo() {
+        return trainNo;
+    }
+
+    public void setTrainNo(String trainNo) {
+        this.trainNo = trainNo;
+    }
+
+    public void setTrainId(String trainId) {
+        this.trainId = trainId;
+    }
+
+    public void setroute(Map<String, String> route) {
+        this.route = route;
+    }
+
+    public void setStations(List<String> stations) {
+        this.stations = stations;
+    }
+
+    public String getTrainInfo() {
+        return String.format("Train ID: %s Train No: %s", trainId, trainNo);
+    }
+
 }

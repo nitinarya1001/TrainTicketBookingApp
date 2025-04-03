@@ -15,15 +15,13 @@ public class UserBookingService {
 
     private List<User> userList;
 
-    private static final String USERS_PATH = "../localDB/user.json";
+    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localDB/users.json";
 
     private ObjectMapper objectMapper = new ObjectMapper();  
 
     public UserBookingService(User user) throws IOException{
         this.user = user;
         File users = new File(USERS_PATH);
-        userList = objectMapper.readValue(users, new TypeReference<List<User>>() {
-            
-        });
+        userList = objectMapper.readValue(users, new TypeReference<List<User>>() {});
     }
 }
